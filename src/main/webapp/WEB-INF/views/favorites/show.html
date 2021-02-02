@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+
+<body>
+<p th:text="${film.getName()}">VALUE</p>
+<p th:text="${film.getId()}">VALUE</p>
+
+<a th:href="@{/favorites/{id}/edit(id=${film.getId()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/favorites/{id}(id=${film.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+
+</body>
+
+</html>
